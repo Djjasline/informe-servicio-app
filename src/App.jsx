@@ -1,5 +1,3 @@
-
-// NUEVA VERSIÓN COMPLETA DE LA APP BASADA EN LA PLANTILLA ASTAP CON CABECERA FIJA Y LOGO
 import React, { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import jsPDF from "jspdf";
