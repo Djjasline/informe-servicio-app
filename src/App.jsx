@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import jsPDF from "jspdf";
@@ -20,8 +21,6 @@ export default function App() {
   const [pruebasAntes, setPruebasAntes] = useState(5);
   const [pruebasDespues, setPruebasDespues] = useState(5);
   const [actividades, setActividades] = useState([{ descripcion: '', evidencia: '' }]);
-  const [materiales, setMateriales] = useState(4);
-  const [pdfURL, setPdfURL] = useState(null);
   const [pdfList, setPdfList] = useState([]);
   const [search, setSearch] = useState("");
   const [correoSupervisor, setCorreoSupervisor] = useState("");
@@ -31,5 +30,19 @@ export default function App() {
     setPdfList(stored);
   }, []);
 
-  return <div>ASTAP - Informe de Servicio</div>;
+  return (
+    <div>
+      <header>
+        <h1>ASTAP - Informe de Servicio</h1>
+        <p>Formulario funcionando...</p>
+      </header>
+      <main ref={formRef}>
+        <input placeholder="Cliente" value={cliente} onChange={e => setCliente(e.target.value)} />
+        <input placeholder="Código Interno" value={codigoInterno} onChange={e => setCodigoInterno(e.target.value)} />
+        <input placeholder="Fecha del Servicio" type="date" value={fechaServicio} onChange={e => setFechaServicio(e.target.value)} />
+        <input placeholder="Dirección" value={direccion} onChange={e => setDireccion(e.target.value)} />
+        <input placeholder="Referencia" value={referencia} onChange={e => setReferencia(e.target.value)} />
+      </main>
+    </div>
+  );
 }
